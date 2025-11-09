@@ -187,7 +187,7 @@ function OrderCard({ order, status }: { order: any, status: string }) {
 
             {/* Order Items */}
             <div className="space-y-2">
-              {order.items.map((item) => (
+              {order.items.map((item: any) => (
                 <div key={item.id} className="flex items-center space-x-3">
                   <div className="w-10 h-10 relative rounded">
                     <Image
@@ -245,7 +245,7 @@ function OrderCard({ order, status }: { order: any, status: string }) {
                       <div className="space-y-2">
                         <h4 className="font-medium">Order Items</h4>
                         <div className="space-y-3">
-                          {order.items.map((item) => (
+                          {order.items.map((item: any) => (
                             <div key={item.id} className="flex items-center space-x-3 bg-gray-50 p-3 rounded-lg">
                               <div className="w-16 h-16 relative rounded">
                                 <Image

@@ -1,0 +1,31 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🔍 Running pre-commit checks..."
+
+# Run linting
+echo "📝 Running lint..."
+npm run lint || {
+  echo "❌ Linting failed. Please fix the errors before committing."
+  exit 1
+}
+
+# Run tests (if test script exists)
+if grep -q '"test"' package.json; then
+  echo "🧪 Running tests..."
+  npm test || {
+    echo "❌ Tests failed. Please fix the tests before committing."
+    exit 1
+  }
+else
+  echo "⚠️  No test script found in package.json. Skipping tests."
+fi
+
+# Run build
+echo "🏗️  Running build..."
+npm run build || {
+  echo "❌ Build failed. Please fix the build errors before committing."
+  exit 1
+}
+
+echo "✅ All pre-commit checks passed!"

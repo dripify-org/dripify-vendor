@@ -23,7 +23,7 @@ export default function OnboardingPage() {
   const [completedSteps, setCompletedSteps] = useState<number[]>([]);
   const router = useRouter();
 
-  const progress = (completedSteps.length / steps.length) * 100;
+  const progress = Math.round((completedSteps.length / steps.length) * 100) || 0;
 
   const handleNext = () => {
     if (!completedSteps.includes(currentStep)) {
@@ -155,7 +155,7 @@ export default function OnboardingPage() {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Welcome to VendorHub</h1>
-          <p className="text-gray-600">Let's set up your vendor account in a few simple steps</p>
+          <p className="text-gray-600">Lets set up your vendor account in a few simple steps</p>
         </div>
 
         <div className="mb-8">

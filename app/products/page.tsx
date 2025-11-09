@@ -266,7 +266,7 @@ export default function ProductsPage() {
                 <div className="absolute top-2 right-2">
                   <Switch 
                     checked={product.status === 'active'} 
-                    size="sm"
+                    className="size-5"
                   />
                 </div>
                 {product.lowStock && (

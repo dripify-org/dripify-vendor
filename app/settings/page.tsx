@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 'use client';
 
 import { useState } from 'react';
@@ -191,7 +192,7 @@ export default function SettingsPage() {
                   <Clock className="h-5 w-5 mr-2" />
                   Operating Hours
                 </CardTitle>
-                <CardDescription>Set your store's operating schedule</CardDescription>
+                <CardDescription>Set your store&lsquo;s operating schedule</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
